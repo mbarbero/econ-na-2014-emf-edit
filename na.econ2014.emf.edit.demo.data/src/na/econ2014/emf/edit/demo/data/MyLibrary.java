@@ -1,5 +1,7 @@
 package na.econ2014.emf.edit.demo.data;
 
+import java.util.Calendar;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -47,6 +49,9 @@ public class MyLibrary {
 		book.setCategory(BookCategory.SCIENCE_FICTION_LITERAL);
 		book.setPages(564);
 		book.setAuthor(tolkien);
+		Calendar pubdate = Calendar.getInstance();
+		pubdate.set(1954, 6, 29);
+		book.setPublicationDate(pubdate.getTime());
 		library.getBooks().add(book);
 		
 		book = factory.createBook();
@@ -54,6 +59,9 @@ public class MyLibrary {
 		book.setCategory(BookCategory.SCIENCE_FICTION_LITERAL);
 		book.setPages(523);
 		book.setAuthor(tolkien);
+		pubdate = Calendar.getInstance();
+		pubdate.set(1954, 10, 11);
+		book.setPublicationDate(pubdate.getTime());
 		library.getBooks().add(book);
 		
 		book = factory.createBook();
@@ -61,12 +69,18 @@ public class MyLibrary {
 		book.setCategory(BookCategory.SCIENCE_FICTION_LITERAL);
 		book.setPages(639);
 		book.setAuthor(tolkien);
+		pubdate = Calendar.getInstance();
+		pubdate.set(1955, 9, 20);
+		book.setPublicationDate(pubdate.getTime());
 		library.getBooks().add(book);
 		
 		VideoCassette videoK7 = factory.createVideoCassette();
 		videoK7.setTitle("Tapes are vintage, then they are hype");
 		videoK7.setDamaged(true);
 		videoK7.setCopies(3);
+		pubdate = Calendar.getInstance();
+		pubdate.set(1983, 3, 7);
+		videoK7.setPublicationDate(pubdate.getTime());
 		library.getStock().add(videoK7);
 
 		resourceSet = new ResourceSetImpl();

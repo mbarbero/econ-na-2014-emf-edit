@@ -9,6 +9,7 @@ import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.examples.extlibrary.provider.EXTLibraryItemProviderAdapterFactory;
+import org.eclipse.emf.examples.extlibrary.provider.decorator.DecoratorEXTLibraryItemProviderAdapterFactory;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
@@ -47,7 +48,7 @@ public class NotYourFathersSWT extends DemoSWT {
 		treeViewer.getTree().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
 		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory();
-		//adapterFactory.addAdapterFactory(new DecoratorEXTLibraryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DecoratorEXTLibraryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EXTLibraryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		//adapterFactory.addAdapterFactory(new TreeItemProviderAdapterFactory());
