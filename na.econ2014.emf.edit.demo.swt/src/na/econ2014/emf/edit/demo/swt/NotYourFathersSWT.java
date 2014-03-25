@@ -2,11 +2,13 @@ package na.econ2014.emf.edit.demo.swt;
 
 import na.econ2014.emf.edit.demo.data.MyLibrary;
 
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.examples.extlibrary.provider.EXTLibraryItemProviderAdapterFactory;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
@@ -46,8 +48,8 @@ public class NotYourFathersSWT extends DemoSWT {
 		
 		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory();
 		//adapterFactory.addAdapterFactory(new DecoratorEXTLibraryItemProviderAdapterFactory());
-		//adapterFactory.addAdapterFactory(new EXTLibraryItemProviderAdapterFactory());
-		//adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EXTLibraryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		//adapterFactory.addAdapterFactory(new TreeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
