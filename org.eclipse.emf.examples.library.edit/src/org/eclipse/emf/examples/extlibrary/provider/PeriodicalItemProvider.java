@@ -46,129 +46,127 @@ public class PeriodicalItemProvider
     IItemPropertySource 
 {
   /**
-   * This constructs an instance from a factory and a notifier.
-   * <!-- begin-user-doc -->
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public PeriodicalItemProvider(AdapterFactory adapterFactory)
   {
-    super(adapterFactory);
-  }
+		super(adapterFactory);
+	}
 
   /**
-   * This returns the property descriptors for the adapted class.
-   * <!-- begin-user-doc -->
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
   {
-    if (itemPropertyDescriptors == null)
-    {
-      super.getPropertyDescriptors(object);
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
 
-      addTitlePropertyDescriptor(object);
-      addIssuesPerYearPropertyDescriptor(object);
-    }
-    return itemPropertyDescriptors;
-  }
+			addTitlePropertyDescriptor(object);
+			addIssuesPerYearPropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
 
   /**
-   * This adds a property descriptor for the Title feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addTitlePropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Periodical_title_feature"), //$NON-NLS-1$
-         getString("_UI_PropertyDescriptor_description", "_UI_Periodical_title_feature", "_UI_Periodical_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-         EXTLibraryPackage.Literals.PERIODICAL__TITLE,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Periodical_title_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Periodical_title_feature", "_UI_Periodical_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 EXTLibraryPackage.Literals.PERIODICAL__TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
   /**
-   * This adds a property descriptor for the Issues Per Year feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Issues Per Year feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addIssuesPerYearPropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Periodical_issuesPerYear_feature"), //$NON-NLS-1$
-         getString("_UI_PropertyDescriptor_description", "_UI_Periodical_issuesPerYear_feature", "_UI_Periodical_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-         EXTLibraryPackage.Literals.PERIODICAL__ISSUES_PER_YEAR,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Periodical_issuesPerYear_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Periodical_issuesPerYear_feature", "_UI_Periodical_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 EXTLibraryPackage.Literals.PERIODICAL__ISSUES_PER_YEAR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
   /**
-   * This returns the label text for the adapted class.
-   * <!-- begin-user-doc -->
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getText(Object object)
   {
-    String label = ((Periodical)object).getTitle();
-    return label == null || label.length() == 0 ?
-      getString("_UI_Periodical_type") : //$NON-NLS-1$
-      getString("_UI_Periodical_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
-  }
+		String label = ((Periodical)object).getTitle();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Periodical_type") : //$NON-NLS-1$
+			getString("_UI_Periodical_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+	}
 
   /**
-   * This handles model notifications by calling {@link #updateChildren} to update any cached
-   * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-   * <!-- begin-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void notifyChanged(Notification notification)
   {
-    updateChildren(notification);
+		updateChildren(notification);
 
-    switch (notification.getFeatureID(Periodical.class))
-    {
-      case EXTLibraryPackage.PERIODICAL__TITLE:
-      case EXTLibraryPackage.PERIODICAL__ISSUES_PER_YEAR:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-        return;
-    }
-    super.notifyChanged(notification);
-  }
+		switch (notification.getFeatureID(Periodical.class)) {
+			case EXTLibraryPackage.PERIODICAL__TITLE:
+			case EXTLibraryPackage.PERIODICAL__ISSUES_PER_YEAR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
 
   /**
-   * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-   * that can be created under this object.
-   * <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
   {
-    super.collectNewChildDescriptors(newChildDescriptors, object);
-  }
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
 
 }

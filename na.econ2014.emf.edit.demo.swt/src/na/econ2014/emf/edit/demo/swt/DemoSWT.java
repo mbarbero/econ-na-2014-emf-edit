@@ -6,6 +6,7 @@ import na.econ2014.emf.edit.demo.data.MyLibrary;
 
 import org.eclipse.emf.edit.tree.TreeNode;
 import org.eclipse.emf.examples.extlibrary.Book;
+import org.eclipse.emf.examples.extlibrary.Writer;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -87,8 +88,8 @@ public abstract class DemoSWT {
 	
 	protected final void setInput(MyLibrary library) {
 		myLibrary = library;
-		treeViewer.setInput(library.getResourceSet());
-		//treeViewer.setInput(library.getTreeNode());
+		//treeViewer.setInput(library.getResourceSet());
+		treeViewer.setInput(library.getTreeNode());
 	}
 	
 	private void handleSelectionChanged(SelectionChangedEvent event) {
@@ -122,7 +123,28 @@ public abstract class DemoSWT {
 		} else if (element instanceof TreeNode && ((TreeNode) element).getData() instanceof Book) {
 			book = (Book) ((TreeNode) element).getData();
 		}
+		capitalize(book);
 		
+		Writer writer = null;
+		if (element instanceof Writer) {
+			writer = (Writer) element;
+		} else if (element instanceof TreeNode && ((TreeNode) element).getData() instanceof Writer) {
+			writer = (Writer) ((TreeNode) element).getData();
+		}
+		capitalize(writer);
+	}
+
+	private void capitalize(Writer writer) {
+		if (writer != null) {
+			if (writer.getName().equals(writer.getName().toUpperCase())) {
+				writer.setName(writer.getName().toLowerCase());
+			} else {
+				writer.setName(writer.getName().toUpperCase());
+			}
+		}
+	}
+
+	private void capitalize(Book book) {
 		if (book != null) {
 			if (book.getTitle().equals(book.getTitle().toUpperCase())) {
 				book.setTitle(book.getTitle().toLowerCase());

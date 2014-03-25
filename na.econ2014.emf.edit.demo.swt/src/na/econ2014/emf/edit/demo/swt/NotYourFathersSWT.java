@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
+import org.eclipse.emf.edit.tree.provider.TreeItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.examples.extlibrary.provider.EXTLibraryItemProviderAdapterFactory;
@@ -51,7 +52,7 @@ public class NotYourFathersSWT extends DemoSWT {
 		adapterFactory.addAdapterFactory(new DecoratorEXTLibraryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EXTLibraryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
-		//adapterFactory.addAdapterFactory(new TreeItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TreeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		
