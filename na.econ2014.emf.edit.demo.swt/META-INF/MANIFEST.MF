@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Swt
+Bundle-SymbolicName: na.econ2014.emf.edit.demo.swt
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.emf.examples.library;bundle-version="2.5.0",
+ org.eclipse.swt;bundle-version="3.102.1",
+ org.eclipse.jface;bundle-version="3.9.1",
+ org.eclipse.emf.edit;bundle-version="2.9.0",
+ org.eclipse.emf.edit.ui;bundle-version="2.9.0",
+ na.econ2014.emf.edit.demo.data;bundle-version="1.0.0",
+ org.eclipse.emf.examples.library.edit;bundle-version="2.5.0",
+ org.eclipse.emf.ecore.edit;bundle-version="2.8.0"
